@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "credentials": {
+      "header": {
+        "APIKey": [
+          "{{azurenaming-api-key}}"
+        ]
+      },
+      "query": {}
+    },
+    "protocol": "http",
+    "tls": {
+      "validateCertificateChain": true,
+      "validateCertificateName": true
+    },
+    "url": "https://rubicon-d-namingapp-webapp.azurewebsites.net/"
+  }
+}

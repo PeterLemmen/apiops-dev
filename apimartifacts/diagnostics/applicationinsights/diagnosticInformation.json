@@ -1,0 +1,53 @@
+{
+  "properties": {
+    "alwaysLog": "allErrors",
+    "backend": {
+      "request": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": [
+          "X-Forwarded-For",
+          "Authorization"
+        ]
+      },
+      "response": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": [
+          "X-Forwarded-For",
+          "Authorization"
+        ]
+      }
+    },
+    "frontend": {
+      "request": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": [
+          "X-Forwarded-For",
+          "Authorization"
+        ]
+      },
+      "response": {
+        "body": {
+          "bytes": 8192
+        },
+        "headers": [
+          "X-Forwarded-For",
+          "Authorization"
+        ]
+      }
+    },
+    "httpCorrelationProtocol": "Legacy",
+    "logClientIp": true,
+    "loggerId": "/subscriptions/29903316-1b21-45a9-9bcd-412cb865d18b/resourceGroups/rubicon-d-demo-apim/providers/Microsoft.ApiManagement/service/rubicon-d-demo-apim/loggers/appinsights",
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "Fixed"
+    },
+    "verbosity": "information"
+  }
+}
