@@ -9,6 +9,6 @@
       "validateCertificateChain": true,
       "validateCertificateName": true
     },
-    "url": "https://rubicon-d-namingapp-webapp.azurewebsites.net/"
+    "url": "https://petstore.swagger.io/v2/"
   }
 }
