@@ -13,10 +13,7 @@
 <policies>
 	<inbound>
 		<base />
-		<set-backend-service backend-id="azurenamingapi" />
-		<set-header name="APIKey" exists-action="override">
-			<value>{{azurenaming-api-key}}</value>
-		</set-header>
+		<set-backend-service backend-id="petstore" />
 	</inbound>
 	<backend>
 		<base />

@@ -1,0 +1,99 @@
+openapi: 3.0.1
+info:
+  title: NumberConversion
+  version: v1
+servers:
+  - url: https://gateway.dev.api.lemmen.amsterdam/numberconversion/v1
+paths:
+  /NumberToWords:
+    post:
+      summary: NumberToWords
+      operationId: 6457bd534634611658abd4ee
+      requestBody:
+        description: NumberToWords_InputMessage
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumberToWords'
+            example:
+              numberToWords:
+                ubiNum: 1
+      responses:
+        '200':
+          description: NumberToWords_OutputMessage
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumberToWordsResponse'
+              example:
+                numberToWordsResponse:
+                  numberToWordsResult: sample
+  /NumberToDollars:
+    post:
+      summary: NumberToDollars
+      operationId: 6457bd534634611658abd4ef
+      requestBody:
+        description: NumberToDollars_InputMessage
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumberToDollars'
+            example:
+              numberToDollars:
+                dNum: 1
+      responses:
+        '200':
+          description: NumberToDollars_OutputMessage
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumberToDollarsResponse'
+              example:
+                numberToDollarsResponse:
+                  numberToDollarsResult: sample
+components:
+  schemas:
+    NumberToWords:
+      type: object
+      properties:
+        numberToWords:
+          type: object
+          properties:
+            ubiNum:
+              type: number
+    NumberToWordsResponse:
+      type: object
+      properties:
+        numberToWordsResponse:
+          type: object
+          properties:
+            numberToWordsResult:
+              type: string
+    NumberToDollars:
+      type: object
+      properties:
+        numberToDollars:
+          type: object
+          properties:
+            dNum:
+              type: number
+    NumberToDollarsResponse:
+      type: object
+      properties:
+        numberToDollarsResponse:
+          type: object
+          properties:
+            numberToDollarsResult:
+              type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

@@ -4,7 +4,6 @@
     "apiVersion": "v1",
     "apiVersionSetId": "/subscriptions/29903316-1b21-45a9-9bcd-412cb865d18b/resourceGroups/rubicon-d-demo-apim/providers/Microsoft.ApiManagement/service/rubicon-d-demo-apim/apiVersionSets/6457a4a16a74d3e9e44ca264",
     "authenticationSettings": {},
-    "description": "The Number Conversion Web Service, implemented with Visual DataFlex, provides functions that convert numbers into words or dollar amounts.",
     "displayName": "NumberConversion",
     "isCurrent": true,
     "path": "numberconversion",
@@ -16,7 +15,6 @@
       "header": "Ocp-Apim-Subscription-Key",
       "query": "subscription-key"
     },
-    "subscriptionRequired": true,
-    "type": "soap"
+    "subscriptionRequired": true
   }
 }
