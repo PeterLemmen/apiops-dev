@@ -1,7 +1,0 @@
-{
-  "properties": {
-    "displayName": "environment-code",
-    "secret": false,
-    "value": "dev"
-  }
-}

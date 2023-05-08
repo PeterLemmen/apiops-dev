@@ -1,6 +1,0 @@
-{
-  "properties": {
-    "displayName": "azurenaming-api-key",
-    "secret": true
-  }
-}
