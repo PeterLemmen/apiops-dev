@@ -1,0 +1,4105 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Azure Naming Tool API",
+    "description": "An ASP.NET Core Web API for managing the Azure Naming tool configuration. All API requests require the configured API Key (found in the site Admin configuration). You can find more details in the <a href=\"https://github.com/microsoft/CloudAdoptionFramework/blob/master/ready/AzNamingTool/USINGTHEAPI.md\" target=\"_new\">Azure Naming Tool API documentation</a>.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://gateway.dev.api.lemmen.amsterdam/azurenaming/v1"
+    },
+    {
+      "url": "https://gateway.dev.api.lemmen.amsterdam/azurenaming/v1"
+    }
+  ],
+  "paths": {
+    "/api/Admin/UpdatePassword": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will update the Admin Password.",
+        "description": "This function will update the Admin Password.",
+        "operationId": "post-api-admin-updatepassword",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "description": "string - Current Admin Password",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "string - New Admin Password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/UpdateAPIKey": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will update the API Key.",
+        "description": "This function will update the API Key.",
+        "operationId": "post-api-admin-updateapikey",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "description": "string - Current Admin Password",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "string - New API Key",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "string"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/GenerateAPIKey": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will generate a new API Key.",
+        "description": "This function will generate a new API Key.",
+        "operationId": "post-api-admin-generateapikey",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "description": "string - Current Admin Password",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/GetAdminLog": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will return the admin log data.",
+        "description": "This function will return the admin log data.",
+        "operationId": "get-api-admin-getadminlog",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/PurgeAdminLog": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will purge the admin log data.",
+        "description": "This function will purge the admin log data.",
+        "operationId": "post-api-admin-purgeadminlog",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/GetGeneratedNamesLog": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will return the generated names data.",
+        "description": "This function will return the generated names data.",
+        "operationId": "get-api-admin-getgeneratednameslog",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/PurgeGeneratedNamesLog": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will purge the generated names data.",
+        "description": "This function will purge the generated names data.",
+        "operationId": "post-api-admin-purgegeneratednameslog",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/ResetSiteConfiguration": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "This function will reset the site configuration. THIS CANNOT BE UNDONE!",
+        "description": "This function will reset the site configuration. THIS CANNOT BE UNDONE!",
+        "operationId": "post-api-admin-resetsiteconfiguration",
+        "parameters": [
+          {
+            "name": "AdminPassword",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomComponents": {
+      "get": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will return the custom components data.",
+        "description": "This function will return the custom components data.",
+        "operationId": "get-api-customcomponents",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will create/update the specified custom component data.",
+        "description": "This function will create/update the specified custom component data.",
+        "operationId": "post-api-customcomponents",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "CustomComponent (json) - Custom component data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomComponent"
+              },
+              "example": {
+                "id": 0,
+                "parentComponent": "string",
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomComponent"
+              },
+              "example": {
+                "id": 0,
+                "parentComponent": "string",
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomComponent"
+              },
+              "example": {
+                "id": 0,
+                "parentComponent": "string",
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomComponents/GetByParentType/{parenttype}": {
+      "get": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will return the custom components data for the specifc parent component type.",
+        "description": "This function will return the custom components data for the specifc parent component type.",
+        "operationId": "get-api-customcomponents-getbyparenttype-parenttype",
+        "parameters": [
+          {
+            "name": "parenttype",
+            "in": "path",
+            "description": "string - Parent Component Type Name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomComponents/{id}": {
+      "get": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will return the specifed custom component data.",
+        "description": "This function will return the specifed custom component data.",
+        "operationId": "get-api-customcomponents-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Custom Component id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will delete the specifed custom component data.",
+        "description": "This function will delete the specifed custom component data.",
+        "operationId": "delete-api-customcomponents-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Custom component id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomComponents/PostConfig": {
+      "post": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will update all custom components data.",
+        "description": "This function will update all custom components data.",
+        "operationId": "post-api-customcomponents-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List-CustomComponent (json) - All custom components data. (Legacy functionality).",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CustomComponent"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "parentComponent": "string",
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CustomComponent"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "parentComponent": "string",
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CustomComponent"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "parentComponent": "string",
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomComponents/PostConfigWithParentData": {
+      "post": {
+        "tags": [
+          "CustomComponents"
+        ],
+        "summary": "This function will update all custom components data.",
+        "description": "This function will update all custom components data.",
+        "operationId": "post-api-customcomponents-postconfigwithparentdata",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "CustomComponmentConfig (json) - Full custom components data with parent component data.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomComponmentConfig"
+              },
+              "example": {
+                "parentComponents": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "displayName": "string",
+                    "enabled": true,
+                    "sortOrder": 0,
+                    "isCustom": true,
+                    "isFreeText": true
+                  }
+                ],
+                "customComponents": [
+                  {
+                    "id": 0,
+                    "parentComponent": "string",
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomComponmentConfig"
+              },
+              "example": {
+                "parentComponents": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "displayName": "string",
+                    "enabled": true,
+                    "sortOrder": 0,
+                    "isCustom": true,
+                    "isFreeText": true
+                  }
+                ],
+                "customComponents": [
+                  {
+                    "id": 0,
+                    "parentComponent": "string",
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomComponmentConfig"
+              },
+              "example": {
+                "parentComponents": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "displayName": "string",
+                    "enabled": true,
+                    "sortOrder": 0,
+                    "isCustom": true,
+                    "isFreeText": true
+                  }
+                ],
+                "customComponents": [
+                  {
+                    "id": 0,
+                    "parentComponent": "string",
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ImportExport/ExportConfiguration": {
+      "get": {
+        "tags": [
+          "ImportExport"
+        ],
+        "summary": "This function will export the current configuration data (all components) as a single JSON file.",
+        "description": "This function will export the current configuration data (all components) as a single JSON file.",
+        "operationId": "get-api-importexport-exportconfiguration",
+        "parameters": [
+          {
+            "name": "includeAdmin",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ImportExport/ImportConfiguration": {
+      "post": {
+        "tags": [
+          "ImportExport"
+        ],
+        "summary": "This function will import the provided configuration data (all components). This will overwrite the existing configuration data.",
+        "description": "This function will import the provided configuration data (all components). This will overwrite the existing configuration data.",
+        "operationId": "post-api-importexport-importconfiguration",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ConfigurationData (json) - Tool configuration File",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationData"
+              },
+              "example": {
+                "resourceComponents": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "displayName": "string",
+                    "enabled": true,
+                    "sortOrder": 0,
+                    "isCustom": true,
+                    "isFreeText": true
+                  }
+                ],
+                "resourceDelimiters": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "delimiter": "string",
+                    "enabled": true,
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceEnvironments": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceLocations": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "enabled": true
+                  }
+                ],
+                "resourceOrgs": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceProjAppSvcs": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceTypes": [
+                  {
+                    "id": 0,
+                    "resource": "string",
+                    "optional": "string",
+                    "exclude": "string",
+                    "property": "string",
+                    "ShortName": "string",
+                    "scope": "string",
+                    "lengthMin": "string",
+                    "lengthMax": "string",
+                    "validText": "string",
+                    "invalidText": "string",
+                    "invalidCharacters": "string",
+                    "invalidCharactersStart": "string",
+                    "invalidCharactersEnd": "string",
+                    "invalidCharactersConsecutive": "string",
+                    "regx": "string",
+                    "staticValues": "string",
+                    "enabled": true
+                  }
+                ],
+                "resourceUnitDepts": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceFunctions": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "customComponents": [
+                  {
+                    "id": 0,
+                    "parentComponent": "string",
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "generatedNames": [
+                  {
+                    "id": 0,
+                    "createdOn": "string",
+                    "resourceName": "string",
+                    "resourceTypeName": "string",
+                    "components": [
+                      [
+                        "string"
+                      ]
+                    ]
+                  }
+                ],
+                "adminLogs": [
+                  {
+                    "id": 0,
+                    "createdOn": "string",
+                    "title": "string",
+                    "message": "string"
+                  }
+                ],
+                "saltKey": "string",
+                "adminPassword": "string",
+                "apiKey": "string",
+                "dismissedAlerts": "string",
+                "duplicateNamesAllowed": "string",
+                "generationWebhook": "string",
+                "connectivityCheckEnabled": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationData"
+              },
+              "example": {
+                "resourceComponents": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "displayName": "string",
+                    "enabled": true,
+                    "sortOrder": 0,
+                    "isCustom": true,
+                    "isFreeText": true
+                  }
+                ],
+                "resourceDelimiters": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "delimiter": "string",
+                    "enabled": true,
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceEnvironments": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceLocations": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "enabled": true
+                  }
+                ],
+                "resourceOrgs": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceProjAppSvcs": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceTypes": [
+                  {
+                    "id": 0,
+                    "resource": "string",
+                    "optional": "string",
+                    "exclude": "string",
+                    "property": "string",
+                    "ShortName": "string",
+                    "scope": "string",
+                    "lengthMin": "string",
+                    "lengthMax": "string",
+                    "validText": "string",
+                    "invalidText": "string",
+                    "invalidCharacters": "string",
+                    "invalidCharactersStart": "string",
+                    "invalidCharactersEnd": "string",
+                    "invalidCharactersConsecutive": "string",
+                    "regx": "string",
+                    "staticValues": "string",
+                    "enabled": true
+                  }
+                ],
+                "resourceUnitDepts": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceFunctions": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "customComponents": [
+                  {
+                    "id": 0,
+                    "parentComponent": "string",
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "generatedNames": [
+                  {
+                    "id": 0,
+                    "createdOn": "string",
+                    "resourceName": "string",
+                    "resourceTypeName": "string",
+                    "components": [
+                      [
+                        "string"
+                      ]
+                    ]
+                  }
+                ],
+                "adminLogs": [
+                  {
+                    "id": 0,
+                    "createdOn": "string",
+                    "title": "string",
+                    "message": "string"
+                  }
+                ],
+                "saltKey": "string",
+                "adminPassword": "string",
+                "apiKey": "string",
+                "dismissedAlerts": "string",
+                "duplicateNamesAllowed": "string",
+                "generationWebhook": "string",
+                "connectivityCheckEnabled": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationData"
+              },
+              "example": {
+                "resourceComponents": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "displayName": "string",
+                    "enabled": true,
+                    "sortOrder": 0,
+                    "isCustom": true,
+                    "isFreeText": true
+                  }
+                ],
+                "resourceDelimiters": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "delimiter": "string",
+                    "enabled": true,
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceEnvironments": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceLocations": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "enabled": true
+                  }
+                ],
+                "resourceOrgs": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceProjAppSvcs": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceTypes": [
+                  {
+                    "id": 0,
+                    "resource": "string",
+                    "optional": "string",
+                    "exclude": "string",
+                    "property": "string",
+                    "ShortName": "string",
+                    "scope": "string",
+                    "lengthMin": "string",
+                    "lengthMax": "string",
+                    "validText": "string",
+                    "invalidText": "string",
+                    "invalidCharacters": "string",
+                    "invalidCharactersStart": "string",
+                    "invalidCharactersEnd": "string",
+                    "invalidCharactersConsecutive": "string",
+                    "regx": "string",
+                    "staticValues": "string",
+                    "enabled": true
+                  }
+                ],
+                "resourceUnitDepts": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "resourceFunctions": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "customComponents": [
+                  {
+                    "id": 0,
+                    "parentComponent": "string",
+                    "name": "string",
+                    "shortName": "string",
+                    "sortOrder": 0
+                  }
+                ],
+                "generatedNames": [
+                  {
+                    "id": 0,
+                    "createdOn": "string",
+                    "resourceName": "string",
+                    "resourceTypeName": "string",
+                    "components": [
+                      [
+                        "string"
+                      ]
+                    ]
+                  }
+                ],
+                "adminLogs": [
+                  {
+                    "id": 0,
+                    "createdOn": "string",
+                    "title": "string",
+                    "message": "string"
+                  }
+                ],
+                "saltKey": "string",
+                "adminPassword": "string",
+                "apiKey": "string",
+                "dismissedAlerts": "string",
+                "duplicateNamesAllowed": "string",
+                "generationWebhook": "string",
+                "connectivityCheckEnabled": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceComponents": {
+      "get": {
+        "tags": [
+          "ResourceComponents"
+        ],
+        "summary": "This function will return the components data.",
+        "description": "This function will return the components data.",
+        "operationId": "get-api-resourcecomponents",
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "bool - All/Only-enabled components flag",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceComponents"
+        ],
+        "summary": "This function will create/update the specified component data.",
+        "description": "This function will create/update the specified component data.",
+        "operationId": "post-api-resourcecomponents",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceComponent (json) - Component data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceComponent"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "displayName": "string",
+                "enabled": true,
+                "sortOrder": 0,
+                "isCustom": true,
+                "isFreeText": true
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceComponent"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "displayName": "string",
+                "enabled": true,
+                "sortOrder": 0,
+                "isCustom": true,
+                "isFreeText": true
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceComponent"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "displayName": "string",
+                "enabled": true,
+                "sortOrder": 0,
+                "isCustom": true,
+                "isFreeText": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceComponents/{id}": {
+      "get": {
+        "tags": [
+          "ResourceComponents"
+        ],
+        "summary": "This function will return the specifed resource component data.",
+        "description": "This function will return the specifed resource component data.",
+        "operationId": "get-api-resourcecomponents-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Resource Component id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceComponents/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceComponents"
+        ],
+        "summary": "This function will update all components data.",
+        "description": "This function will update all components data.",
+        "operationId": "post-api-resourcecomponents-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceComponent (json) - All components configuration data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceComponent"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "displayName": "string",
+                  "enabled": true,
+                  "sortOrder": 0,
+                  "isCustom": true,
+                  "isFreeText": true
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceComponent"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "displayName": "string",
+                  "enabled": true,
+                  "sortOrder": 0,
+                  "isCustom": true,
+                  "isFreeText": true
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceComponent"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "displayName": "string",
+                  "enabled": true,
+                  "sortOrder": 0,
+                  "isCustom": true,
+                  "isFreeText": true
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceDelimiters": {
+      "get": {
+        "tags": [
+          "ResourceDelimiters"
+        ],
+        "summary": "This function will return the delimiters data.",
+        "description": "This function will return the delimiters data.",
+        "operationId": "get-api-resourcedelimiters",
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "bool - All/Only-enabled delimiters flag",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceDelimiters"
+        ],
+        "summary": "This function will create/update the specified delimiter data.",
+        "description": "This function will create/update the specified delimiter data.",
+        "operationId": "post-api-resourcedelimiters",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceDelimiter (json) - Delimiter data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceDelimiter"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "delimiter": "string",
+                "enabled": true,
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceDelimiter"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "delimiter": "string",
+                "enabled": true,
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceDelimiter"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "delimiter": "string",
+                "enabled": true,
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceDelimiters/{id}": {
+      "get": {
+        "tags": [
+          "ResourceDelimiters"
+        ],
+        "summary": "This function will return the specifed resource delimiter data.",
+        "description": "This function will return the specifed resource delimiter data.",
+        "operationId": "get-api-resourcedelimiters-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Resource Delimiter id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceDelimiters/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceDelimiters"
+        ],
+        "summary": "This function will update all delimiters data.",
+        "description": "This function will update all delimiters data.",
+        "operationId": "post-api-resourcedelimiters-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceDelimiter (json) - All delimiters data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceDelimiter"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "delimiter": "string",
+                  "enabled": true,
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceDelimiter"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "delimiter": "string",
+                  "enabled": true,
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceDelimiter"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "delimiter": "string",
+                  "enabled": true,
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceEnvironments": {
+      "get": {
+        "tags": [
+          "ResourceEnvironments"
+        ],
+        "summary": "This function will return the environments data.",
+        "description": "This function will return the environments data.",
+        "operationId": "get-api-resourceenvironments",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceEnvironments"
+        ],
+        "summary": "This function will create/update the specified environment data.",
+        "description": "This function will create/update the specified environment data.",
+        "operationId": "post-api-resourceenvironments",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceEnvironment (json) - Environment data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceEnvironment"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceEnvironment"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceEnvironment"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceEnvironments/{id}": {
+      "get": {
+        "tags": [
+          "ResourceEnvironments"
+        ],
+        "summary": "This function will return the specifed environment data.",
+        "description": "This function will return the specifed environment data.",
+        "operationId": "get-api-resourceenvironments-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Environment id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ResourceEnvironments"
+        ],
+        "summary": "This function will delete the specifed environment data.",
+        "description": "This function will delete the specifed environment data.",
+        "operationId": "delete-api-resourceenvironments-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Environment id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceEnvironments/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceEnvironments"
+        ],
+        "summary": "This function will update all environments data.",
+        "description": "This function will update all environments data.",
+        "operationId": "post-api-resourceenvironments-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceEnvironment (json) - All environments data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceEnvironment"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceEnvironment"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceEnvironment"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceFunctions": {
+      "get": {
+        "tags": [
+          "ResourceFunctions"
+        ],
+        "summary": "This function will return the functions data.",
+        "description": "This function will return the functions data.",
+        "operationId": "get-api-resourcefunctions",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceFunctions"
+        ],
+        "summary": "This function will create/update the specified function data.",
+        "description": "This function will create/update the specified function data.",
+        "operationId": "post-api-resourcefunctions",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceFunction (json) - Function data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceFunction"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceFunction"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceFunction"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceFunctions/{id}": {
+      "get": {
+        "tags": [
+          "ResourceFunctions"
+        ],
+        "summary": "This function will return the specifed function data.",
+        "description": "This function will return the specifed function data.",
+        "operationId": "get-api-resourcefunctions-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Function id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ResourceFunctions"
+        ],
+        "summary": "This function will delete the specifed function data.",
+        "description": "This function will delete the specifed function data.",
+        "operationId": "delete-api-resourcefunctions-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Function id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceFunctions/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceFunctions"
+        ],
+        "summary": "This function will update all functions data.",
+        "description": "This function will update all functions data.",
+        "operationId": "post-api-resourcefunctions-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceFunction (json) - All functions data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceFunction"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceFunction"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceFunction"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceLocations": {
+      "get": {
+        "tags": [
+          "ResourceLocations"
+        ],
+        "summary": "This function will return the locations data.",
+        "description": "This function will return the locations data.",
+        "operationId": "get-api-resourcelocations",
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceLocations/{id}": {
+      "get": {
+        "tags": [
+          "ResourceLocations"
+        ],
+        "summary": "This function will return the specifed location data.",
+        "description": "This function will return the specifed location data.",
+        "operationId": "get-api-resourcelocations-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Location id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceLocations/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceLocations"
+        ],
+        "summary": "This function will update all locations data.",
+        "description": "This function will update all locations data.",
+        "operationId": "post-api-resourcelocations-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceLocation (json) - All locations data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceLocation"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "enabled": true
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceLocation"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "enabled": true
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceLocation"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "enabled": true
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceNamingRequests/RequestNameWithComponents": {
+      "post": {
+        "tags": [
+          "ResourceNamingRequests"
+        ],
+        "summary": "This function will generate a resoure type name for specifed component values. This function requires full definition for all components. It is recommended to use the RequestName API function for name generation.",
+        "description": "This function will generate a resoure type name for specifed component values. This function requires full definition for all components. It is recommended to use the RequestName API function for name generation.",
+        "operationId": "post-api-resourcenamingrequests-requestnamewithcomponents",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceNameRequestWithComponents (json) - Resource Name Request data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceNameRequestWithComponents"
+              },
+              "example": {
+                "resourceDelimiter": {
+                  "id": 0,
+                  "name": "string",
+                  "delimiter": "string",
+                  "enabled": true,
+                  "sortOrder": 0
+                },
+                "resourceEnvironment": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceFunction": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceInstance": "string",
+                "resourceLocation": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "enabled": true
+                },
+                "resourceOrg": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceProjAppSvc": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceType": {
+                  "id": 0,
+                  "resource": "string",
+                  "optional": "string",
+                  "exclude": "string",
+                  "property": "string",
+                  "ShortName": "string",
+                  "scope": "string",
+                  "lengthMin": "string",
+                  "lengthMax": "string",
+                  "validText": "string",
+                  "invalidText": "string",
+                  "invalidCharacters": "string",
+                  "invalidCharactersStart": "string",
+                  "invalidCharactersEnd": "string",
+                  "invalidCharactersConsecutive": "string",
+                  "regx": "string",
+                  "staticValues": "string",
+                  "enabled": true
+                },
+                "resourceUnitDept": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceNameRequestWithComponents"
+              },
+              "example": {
+                "resourceDelimiter": {
+                  "id": 0,
+                  "name": "string",
+                  "delimiter": "string",
+                  "enabled": true,
+                  "sortOrder": 0
+                },
+                "resourceEnvironment": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceFunction": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceInstance": "string",
+                "resourceLocation": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "enabled": true
+                },
+                "resourceOrg": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceProjAppSvc": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceType": {
+                  "id": 0,
+                  "resource": "string",
+                  "optional": "string",
+                  "exclude": "string",
+                  "property": "string",
+                  "ShortName": "string",
+                  "scope": "string",
+                  "lengthMin": "string",
+                  "lengthMax": "string",
+                  "validText": "string",
+                  "invalidText": "string",
+                  "invalidCharacters": "string",
+                  "invalidCharactersStart": "string",
+                  "invalidCharactersEnd": "string",
+                  "invalidCharactersConsecutive": "string",
+                  "regx": "string",
+                  "staticValues": "string",
+                  "enabled": true
+                },
+                "resourceUnitDept": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceNameRequestWithComponents"
+              },
+              "example": {
+                "resourceDelimiter": {
+                  "id": 0,
+                  "name": "string",
+                  "delimiter": "string",
+                  "enabled": true,
+                  "sortOrder": 0
+                },
+                "resourceEnvironment": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceFunction": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceInstance": "string",
+                "resourceLocation": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "enabled": true
+                },
+                "resourceOrg": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceProjAppSvc": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                },
+                "resourceType": {
+                  "id": 0,
+                  "resource": "string",
+                  "optional": "string",
+                  "exclude": "string",
+                  "property": "string",
+                  "ShortName": "string",
+                  "scope": "string",
+                  "lengthMin": "string",
+                  "lengthMax": "string",
+                  "validText": "string",
+                  "invalidText": "string",
+                  "invalidCharacters": "string",
+                  "invalidCharactersStart": "string",
+                  "invalidCharactersEnd": "string",
+                  "invalidCharactersConsecutive": "string",
+                  "regx": "string",
+                  "staticValues": "string",
+                  "enabled": true
+                },
+                "resourceUnitDept": {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceNamingRequests/RequestName": {
+      "post": {
+        "tags": [
+          "ResourceNamingRequests"
+        ],
+        "summary": "This function will generate a resoure type name for specifed component values, using a simple data format.",
+        "description": "This function will generate a resoure type name for specifed component values, using a simple data format.",
+        "operationId": "post-api-resourcenamingrequests-requestname",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceNameRequest (json) - Resource Name Request data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceNameRequest"
+              },
+              "example": {
+                "resourceEnvironment": "string",
+                "resourceFunction": "string",
+                "resourceInstance": "string",
+                "resourceLocation": "string",
+                "resourceOrg": "string",
+                "resourceProjAppSvc": "string",
+                "resourceType": "string",
+                "resourceUnitDept": "string",
+                "customComponents": { },
+                "resourceId": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceNameRequest"
+              },
+              "example": {
+                "resourceEnvironment": "string",
+                "resourceFunction": "string",
+                "resourceInstance": "string",
+                "resourceLocation": "string",
+                "resourceOrg": "string",
+                "resourceProjAppSvc": "string",
+                "resourceType": "string",
+                "resourceUnitDept": "string",
+                "customComponents": { },
+                "resourceId": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceNameRequest"
+              },
+              "example": {
+                "resourceEnvironment": "string",
+                "resourceFunction": "string",
+                "resourceInstance": "string",
+                "resourceLocation": "string",
+                "resourceOrg": "string",
+                "resourceProjAppSvc": "string",
+                "resourceType": "string",
+                "resourceUnitDept": "string",
+                "customComponents": { },
+                "resourceId": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceOrgs": {
+      "get": {
+        "tags": [
+          "ResourceOrgs"
+        ],
+        "summary": "This function will return the orgs data.",
+        "description": "This function will return the orgs data.",
+        "operationId": "get-api-resourceorgs",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceOrgs"
+        ],
+        "summary": "This function will create/update the specified org data.",
+        "description": "This function will create/update the specified org data.",
+        "operationId": "post-api-resourceorgs",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceOrg (json) - Org data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceOrg"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceOrg"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceOrg"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceOrgs/{id}": {
+      "get": {
+        "tags": [
+          "ResourceOrgs"
+        ],
+        "summary": "This function will return the specifed org data.",
+        "description": "This function will return the specifed org data.",
+        "operationId": "get-api-resourceorgs-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Org id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ResourceOrgs"
+        ],
+        "summary": "This function will delete the specifed org data.",
+        "description": "This function will delete the specifed org data.",
+        "operationId": "delete-api-resourceorgs-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Org id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceOrgs/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceOrgs"
+        ],
+        "summary": "This function will update all orgs data.",
+        "description": "This function will update all orgs data.",
+        "operationId": "post-api-resourceorgs-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceOrg (json) - All orgs data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceOrg"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceOrg"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceOrg"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceProjAppSvcs": {
+      "get": {
+        "tags": [
+          "ResourceProjAppSvcs"
+        ],
+        "summary": "This function will return the projects/apps/services data.",
+        "description": "This function will return the projects/apps/services data.",
+        "operationId": "get-api-resourceprojappsvcs",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceProjAppSvcs"
+        ],
+        "summary": "This function will create/update the specified project/app/service data.",
+        "description": "This function will create/update the specified project/app/service data.",
+        "operationId": "post-api-resourceprojappsvcs",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceProjAppSvc (json) - Project/App/Service data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceProjAppSvc"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceProjAppSvc"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceProjAppSvc"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceProjAppSvcs/{id}": {
+      "get": {
+        "tags": [
+          "ResourceProjAppSvcs"
+        ],
+        "summary": "This function will return the specifed project/app/service data.",
+        "description": "This function will return the specifed project/app/service data.",
+        "operationId": "get-api-resourceprojappsvcs-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Project/App/Service id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ResourceProjAppSvcs"
+        ],
+        "summary": "This function will delete the specifed project/app/service data.",
+        "description": "This function will delete the specifed project/app/service data.",
+        "operationId": "delete-api-resourceprojappsvcs-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Project/App?service id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceProjAppSvcs/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceProjAppSvcs"
+        ],
+        "summary": "This function will update all projects/apps/services data.",
+        "description": "This function will update all projects/apps/services data.",
+        "operationId": "post-api-resourceprojappsvcs-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceProjAppSvc (json) - All projects/apps/services data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceProjAppSvc"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceProjAppSvc"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceProjAppSvc"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceTypes": {
+      "get": {
+        "tags": [
+          "ResourceTypes"
+        ],
+        "summary": "This function will return the resource types data.",
+        "description": "This function will return the resource types data.",
+        "operationId": "get-api-resourcetypes",
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceTypes/{id}": {
+      "get": {
+        "tags": [
+          "ResourceTypes"
+        ],
+        "summary": "This function will return the specifed resource type data.",
+        "description": "This function will return the specifed resource type data.",
+        "operationId": "get-api-resourcetypes-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Resource Type id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceTypes/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceTypes"
+        ],
+        "summary": "This function will update all resource types data.",
+        "description": "This function will update all resource types data.",
+        "operationId": "post-api-resourcetypes-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceType (json) - All resource types data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceType"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "resource": "string",
+                  "optional": "string",
+                  "exclude": "string",
+                  "property": "string",
+                  "ShortName": "string",
+                  "scope": "string",
+                  "lengthMin": "string",
+                  "lengthMax": "string",
+                  "validText": "string",
+                  "invalidText": "string",
+                  "invalidCharacters": "string",
+                  "invalidCharactersStart": "string",
+                  "invalidCharactersEnd": "string",
+                  "invalidCharactersConsecutive": "string",
+                  "regx": "string",
+                  "staticValues": "string",
+                  "enabled": true
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceType"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "resource": "string",
+                  "optional": "string",
+                  "exclude": "string",
+                  "property": "string",
+                  "ShortName": "string",
+                  "scope": "string",
+                  "lengthMin": "string",
+                  "lengthMax": "string",
+                  "validText": "string",
+                  "invalidText": "string",
+                  "invalidCharacters": "string",
+                  "invalidCharactersStart": "string",
+                  "invalidCharactersEnd": "string",
+                  "invalidCharactersConsecutive": "string",
+                  "regx": "string",
+                  "staticValues": "string",
+                  "enabled": true
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceType"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "resource": "string",
+                  "optional": "string",
+                  "exclude": "string",
+                  "property": "string",
+                  "ShortName": "string",
+                  "scope": "string",
+                  "lengthMin": "string",
+                  "lengthMax": "string",
+                  "validText": "string",
+                  "invalidText": "string",
+                  "invalidCharacters": "string",
+                  "invalidCharactersStart": "string",
+                  "invalidCharactersEnd": "string",
+                  "invalidCharactersConsecutive": "string",
+                  "regx": "string",
+                  "staticValues": "string",
+                  "enabled": true
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceTypes/UpdateTypeComponents": {
+      "post": {
+        "tags": [
+          "ResourceTypes"
+        ],
+        "summary": "This function will update all resource types for the specifed component",
+        "description": "This function will update all resource types for the specifed component",
+        "operationId": "post-api-resourcetypes-updatetypecomponents",
+        "parameters": [
+          {
+            "name": "operation",
+            "in": "query",
+            "description": "string - Operation type  (optional-add, optional-remove, exlcude-add, exclude-remove)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "componentid",
+            "in": "query",
+            "description": "Format - int32. int - Component ID",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceUnitDepts": {
+      "get": {
+        "tags": [
+          "ResourceUnitDepts"
+        ],
+        "summary": "This function will return the units/depts data.",
+        "description": "This function will return the units/depts data.",
+        "operationId": "get-api-resourceunitdepts",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ResourceUnitDepts"
+        ],
+        "summary": "This function will create/update the specified unit/dept data.",
+        "description": "This function will create/update the specified unit/dept data.",
+        "operationId": "post-api-resourceunitdepts",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ResourceUnitDept (json) - Unit/Dept data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceUnitDept"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceUnitDept"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceUnitDept"
+              },
+              "example": {
+                "id": 0,
+                "name": "string",
+                "shortName": "string",
+                "sortOrder": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceUnitDepts/{id}": {
+      "get": {
+        "tags": [
+          "ResourceUnitDepts"
+        ],
+        "summary": "This function will return the specifed unit/dept data.",
+        "description": "This function will return the specifed unit/dept data.",
+        "operationId": "get-api-resourceunitdepts-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Unit/Dept id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ResourceUnitDepts"
+        ],
+        "summary": "This function will delete the specifed unit/dept data.",
+        "description": "This function will delete the specifed unit/dept data.",
+        "operationId": "delete-api-resourceunitdepts-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. int - Unit/Dept id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ResourceUnitDepts/PostConfig": {
+      "post": {
+        "tags": [
+          "ResourceUnitDepts"
+        ],
+        "summary": "This function will update all units/depts data.",
+        "description": "This function will update all units/depts data.",
+        "operationId": "post-api-resourceunitdepts-postconfig",
+        "parameters": [
+          {
+            "name": "APIKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List - ResourceUnitDept (json) - All units/depts data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceUnitDept"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceUnitDept"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ResourceUnitDept"
+                }
+              },
+              "example": [
+                {
+                  "id": 0,
+                  "name": "string",
+                  "shortName": "string",
+                  "sortOrder": 0
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdminLogMessage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConfigurationData": {
+        "type": "object",
+        "properties": {
+          "resourceComponents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceComponent"
+            },
+            "nullable": true
+          },
+          "resourceDelimiters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceDelimiter"
+            },
+            "nullable": true
+          },
+          "resourceEnvironments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceEnvironment"
+            },
+            "nullable": true
+          },
+          "resourceLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceLocation"
+            },
+            "nullable": true
+          },
+          "resourceOrgs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceOrg"
+            },
+            "nullable": true
+          },
+          "resourceProjAppSvcs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceProjAppSvc"
+            },
+            "nullable": true
+          },
+          "resourceTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceType"
+            },
+            "nullable": true
+          },
+          "resourceUnitDepts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceUnitDept"
+            },
+            "nullable": true
+          },
+          "resourceFunctions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceFunction"
+            },
+            "nullable": true
+          },
+          "customComponents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomComponent"
+            },
+            "nullable": true
+          },
+          "generatedNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneratedName"
+            },
+            "nullable": true
+          },
+          "adminLogs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLogMessage"
+            },
+            "nullable": true
+          },
+          "saltKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "apiKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "dismissedAlerts": {
+            "type": "string",
+            "nullable": true
+          },
+          "duplicateNamesAllowed": {
+            "type": "string",
+            "nullable": true
+          },
+          "generationWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectivityCheckEnabled": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomComponent": {
+        "required": [
+          "name",
+          "parentComponent",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "parentComponent": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomComponmentConfig": {
+        "type": "object",
+        "properties": {
+          "parentComponents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceComponent"
+            },
+            "nullable": true
+          },
+          "customComponents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomComponent"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeneratedName": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resourceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceComponent": {
+        "required": [
+          "displayName",
+          "enabled",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "displayName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isCustom": {
+            "type": "boolean"
+          },
+          "isFreeText": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceDelimiter": {
+        "required": [
+          "enabled",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "delimiter": {
+            "type": "string",
+            "nullable": true
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceEnvironment": {
+        "required": [
+          "name",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceFunction": {
+        "required": [
+          "name",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceLocation": {
+        "required": [
+          "name",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceNameRequest": {
+        "type": "object",
+        "properties": {
+          "resourceEnvironment": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceFunction": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceInstance": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceOrg": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceProjAppSvc": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceUnitDept": {
+            "type": "string",
+            "nullable": true
+          },
+          "customComponents": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Dictionary [Custom Component Type Name],[Custom Component Short Name Value]",
+            "nullable": true
+          },
+          "resourceId": {
+            "type": "integer",
+            "description": "long - Resource Id (example: 14)",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceNameRequestWithComponents": {
+        "type": "object",
+        "properties": {
+          "resourceDelimiter": {
+            "$ref": "#/components/schemas/ResourceDelimiter"
+          },
+          "resourceEnvironment": {
+            "$ref": "#/components/schemas/ResourceEnvironment"
+          },
+          "resourceFunction": {
+            "$ref": "#/components/schemas/ResourceFunction"
+          },
+          "resourceInstance": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceLocation": {
+            "$ref": "#/components/schemas/ResourceLocation"
+          },
+          "resourceOrg": {
+            "$ref": "#/components/schemas/ResourceOrg"
+          },
+          "resourceProjAppSvc": {
+            "$ref": "#/components/schemas/ResourceProjAppSvc"
+          },
+          "resourceType": {
+            "$ref": "#/components/schemas/ResourceType"
+          },
+          "resourceUnitDept": {
+            "$ref": "#/components/schemas/ResourceUnitDept"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceOrg": {
+        "required": [
+          "name",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceProjAppSvc": {
+        "required": [
+          "name",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceType": {
+        "required": [
+          "resource"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "resource": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "optional": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclude": {
+            "type": "string",
+            "nullable": true
+          },
+          "property": {
+            "type": "string",
+            "nullable": true
+          },
+          "ShortName": {
+            "type": "string",
+            "nullable": true
+          },
+          "scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "lengthMin": {
+            "type": "string",
+            "nullable": true
+          },
+          "lengthMax": {
+            "type": "string",
+            "nullable": true
+          },
+          "validText": {
+            "type": "string",
+            "nullable": true
+          },
+          "invalidText": {
+            "type": "string",
+            "nullable": true
+          },
+          "invalidCharacters": {
+            "type": "string",
+            "nullable": true
+          },
+          "invalidCharactersStart": {
+            "type": "string",
+            "nullable": true
+          },
+          "invalidCharactersEnd": {
+            "type": "string",
+            "nullable": true
+          },
+          "invalidCharactersConsecutive": {
+            "type": "string",
+            "nullable": true
+          },
+          "regx": {
+            "type": "string",
+            "nullable": true
+          },
+          "staticValues": {
+            "type": "string",
+            "nullable": true
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceUnitDept": {
+        "required": [
+          "name",
+          "shortName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "shortName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "apiKeyHeader": {
+        "type": "apiKey",
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header"
+      },
+      "apiKeyQuery": {
+        "type": "apiKey",
+        "name": "subscription-key",
+        "in": "query"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKeyHeader": [ ]
+    },
+    {
+      "apiKeyQuery": [ ]
+    }
+  ]
+}
