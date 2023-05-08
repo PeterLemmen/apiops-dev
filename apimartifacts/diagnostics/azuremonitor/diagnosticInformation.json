@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "backend": {
+      "request": {
+        "dataMasking": {
+          "queryParams": [
+            {
+              "mode": "Hide",
+              "value": "*"
+            }
+          ]
+        }
+      }
+    },
+    "frontend": {
+      "request": {
+        "dataMasking": {
+          "queryParams": [
+            {
+              "mode": "Hide",
+              "value": "*"
+            }
+          ]
+        }
+      }
+    },
+    "logClientIp": true,
+    "loggerId": "/subscriptions/29903316-1b21-45a9-9bcd-412cb865d18b/resourceGroups/rubicon-d-demo-apim/providers/Microsoft.ApiManagement/service/rubicon-d-demo-apim/loggers/azuremonitor",
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "Fixed"
+    }
+  }
+}
